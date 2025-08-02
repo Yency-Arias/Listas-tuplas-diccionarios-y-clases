@@ -1,0 +1,317 @@
+#            ---TAREA | LISTA, TUPLAS, DICCIONARIOS Y CLASES---
+#                  ---YENCY ELADIO ARIAS MARCELINO---
+
+
+#---------------------------------------------------------------------------------
+
+
+#                   ---Ejercicio 1: Calificaciones---
+
+calificaciones = {
+    'Ozuna': [85, 90, 78],
+    'Moringa': [92, 88, 95],
+    'Ramonsito': [75, 80, 70],
+    'Pupi': [88, 85, 91]
+}
+
+mejor_estudiante = ''
+mejor_promedio = 0
+
+for estudiante in calificaciones:
+    notas = calificaciones[estudiante]
+    promedio = sum(notas) / len(notas)
+    print(f'\n{estudiante} tiene un promedio de {promedio:.2f}')
+
+    if promedio > mejor_promedio:
+        mejor_promedio = promedio
+        mejor_estudiante = estudiante
+
+print('\n-----------------------------------------')
+print(f'\nEl mejor promedio es de {mejor_estudiante} con {mejor_promedio:.2f}')
+
+
+#----------------------------------------------------------------------------------------
+
+
+#                 ---Ejercicio 2: Numeros telefonicos---
+
+#agenda = {}
+
+#while True:
+#    accion = input('\nQuieres registrar, buscar o salir?: ').lower()
+
+#    if accion == 'registrar':
+#        nombre = input('Nombre: ').strip()
+#        telefono = input('Telefono: ').strip()
+
+#        if nombre in agenda:
+#            agenda[nombre].append(telefono)
+#        else:
+#            agenda[nombre] = [telefono]
+
+#        print(f'\nTelefono agregado para {nombre}.')
+
+#    elif accion == 'buscar':
+#        nombre = input('Nombre a buscar: ').strip()
+#        if nombre in agenda:
+#            print(f'\nTelefonos de {nombre}:')
+#            for tel in agenda[nombre]:
+#                print(f' - {tel}')
+#        else:
+#            print(f'\nNo hay telefonos registrados para {nombre}.')
+
+#    elif accion == 'salir':
+#        print('\nAdios.')
+#        break
+
+#    else:
+#        print('\nOpción no válida, intenta de nuevo.')
+
+
+#-----------------------------------------------------------------------------------
+
+
+#                    ---Ejercicio 3: Inventario---
+
+#inventario = {}
+
+#while True:
+#    print('\nOpciones: agregar / consultar / actualizar / salir')
+#    opcion = input('¿Qué quieres hacer?: ').lower()
+
+#    if opcion == 'agregar':
+#        nombre = input('Nombre del producto: ')
+#        cantidad = int(input('Cantidad: '))
+#        precio = float(input('Precio: '))
+#        inventario[nombre] = {'cantidad': cantidad, 'precio': precio}
+#        print(f'\nProducto {nombre} agregado.')
+
+#    elif opcion == 'consultar':
+#        nombre = input('Nombre del producto: ')
+#        if nombre in inventario:
+#            print(f'\nProducto: {nombre}')
+#            print(f'Cantidad: {inventario[nombre]["cantidad"]}')
+#            print(f'Precio: ${inventario[nombre]["precio"]:.2f}')
+#        else:
+#            print(f'\nEl producto {nombre} no está en el inventario.')
+
+#    elif opcion == 'actualizar':
+#        nombre = input('Nombre del producto: ')
+#        if nombre in inventario:
+#            cantidad = int(input('Nueva cantidad: '))
+#            precio = float(input('Nuevo precio: '))
+#            inventario[nombre]['cantidad'] = cantidad
+#            inventario[nombre]['precio'] = precio
+#            print(f'\nProducto {nombre} actualizado.')
+#        else:
+#            print(f'\nEl producto {nombre} no está en el inventario.')
+
+#    elif opcion == 'salir':
+#        print('\nSaliendo del inventario...')
+#        break
+
+#    else:
+#        print('\nOpcion invalida.')
+
+
+#-----------------------------------------------------------------------------
+
+
+#                   ---Ejercicio 4: Temperaturas---
+
+#print('\nRegistro de temperaturas de la semana')
+
+#lunes = float(input('Temperatura del lunes: '))
+#martes = float(input('Temperatura del martes: '))
+#miercoles = float(input('Temperatura del miércoles: '))
+#jueves = float(input('Temperatura del jueves: '))
+#viernes = float(input('Temperatura del viernes: '))
+#sabado = float(input('Temperatura del sábado: '))
+#domingo = float(input('Temperatura del domingo: '))
+
+#temperaturas = [lunes, martes, miercoles, jueves, viernes, sabado, domingo]
+
+#media = sum(temperaturas) / 7
+#maxima = max(temperaturas)
+#minima = min(temperaturas)
+
+#print(f'\nTemperatura media: {media:.2f}')
+#print(f'Temperatura más alta: {maxima}')
+#print(f'Temperatura más baja: {minima}')
+
+
+#---------------------------------------------------------------------------
+
+
+#                      ---Ejercicio 5: Libros---
+
+#class Libro:
+#    def __init__(self, titulo, autor, anio):
+#        self.titulo = titulo
+#        self.autor = autor
+#        self.anio = anio
+
+#libros = [
+#    Libro('Cien años de soledad', 'Gabriel Garcia Marquez', 1967),
+#    Libro('Don Quijote de la Mancha', 'Miguel de Cervantes', 1605),
+#    Libro('La casa de los espíritus', 'Isabel Allende', 1982),
+#    Libro('El amor en los tiempos del cólera', 'Gabriel Garcia Marquez', 1985)
+#]
+
+#busqueda = input('Busca por autor o año: ').strip()
+
+#if busqueda.isdigit():
+#    anio_buscar = int(busqueda)
+#    print(f'\nLibros del año {anio_buscar}:')
+#    for libro in libros:
+#        if libro.anio == anio_buscar:
+#            print(f'- {libro.titulo} de {libro.autor}')
+#else:
+#    autor_buscar = busqueda.lower()
+#    print(f'\nLibros del autor "{busqueda}":')
+#    for libro in libros:
+#        if autor_buscar in libro.autor.lower():
+#            print(f'- {libro.titulo} ({libro.anio})')
+
+
+#------------------------------------------------------------------------
+
+
+#                   ---Ejercicio 6: Asistencia---
+
+#asistencias = {}
+
+#print('Registro de asistencia semanal')
+
+#for dia in ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes']:
+#    print(f'\nDía: {dia}')
+#    estudiantes = input('Escribe los nombres de los estudiantes presentes, separados por comas: ')
+#    lista_estudiantes = estudiantes.split(',')
+
+#    for nombre in lista_estudiantes:
+#        nombre = nombre.strip()
+#        if nombre in asistencias:
+#            asistencias[nombre] += 1
+#        else:
+#            asistencias[nombre] = 1
+
+#print('\nAsistencia total por estudiante:')
+#for estudiante, veces in asistencias.items():
+#    print(f'{estudiante}: {veces} días')
+
+
+#----------------------------------------------------------------------
+
+
+#                   ---Ejercicio 7: Peliculas---
+
+#class Pelicula:
+#    def __init__(self, titulo, director, genero):
+#        self.titulo = titulo
+#        self.director = director
+#        self.genero = genero
+
+#peliculas = {}
+
+#peliculas['Inception'] = Pelicula('Inception', 'Christopher Nolan', 'Ciencia ficción')
+#peliculas['Titanic'] = Pelicula('Titanic', 'James Cameron', 'Romance')
+#peliculas['The Matrix'] = Pelicula('The Matrix', 'Lana Wachowski y Lilly Wachowski', 'Acción')
+
+#for titulo, pelicula in peliculas.items():
+#    print(f'Título: {titulo}')
+#    print(f'Director: {pelicula.director}')
+#    print(f'Género: {pelicula.genero}\n')
+
+
+#------------------------------------------------------------------------
+
+
+#                 ---Ejercicio 8: Ventas diarias---
+
+#ventas = []
+
+#for i in range(1, 8):
+#    dia = input(f'Día {i}: ')
+#    monto = float(input('Monto de la venta: '))
+#    ventas.append((dia, monto))
+
+#total = 0
+#mayor_venta = ventas[0]
+
+#for venta in ventas:
+#    total += venta[1]
+#    if venta[1] > mayor_venta[1]:
+#        mayor_venta = venta
+
+#print(f'\nTotal de ventas: {total:.2f}')
+#print(f'Dia con mayor venta: {mayor_venta[0]} con ${mayor_venta[1]:.2f}')
+
+
+#----------------------------------------------------------------------
+
+
+#               ---Ejercicio 9: Tarea con nombre---
+
+#class Tarea:
+#    def __init__(self, nombre, prioridad):
+#        self.nombre = nombre
+#        self.prioridad = prioridad
+#        self.estado = 'pendiente'
+
+#tareas = {}
+
+#while True:
+#    accion = input('\n¿Qué quieres hacer? (agregar, completar, mostrar, salir): ').lower()
+
+#    if accion == 'agregar':
+#        nombre = input('Nombre de la tarea: ')
+#        prioridad = input('Prioridad (alta, media, baja): ')
+#        tareas[nombre] = Tarea(nombre, prioridad)
+#        print(f'\nTarea "{nombre}" agregada.')
+
+#    elif accion == 'completar':
+#        nombre = input('Nombre de la tarea a completar: ')
+#        if nombre in tareas:
+#            tareas[nombre].estado = 'completada'
+#            print(f'\nTarea "{nombre}" marcada como completada.')
+#        else:
+#            print('\nEsa tarea no existe.')
+
+#    elif accion == 'mostrar':
+#        if not tareas:
+#            print('\nNo hay tareas.')
+#        else:
+#            print('\nLista de tareas:')
+#            for t in tareas.values():
+#                print(f'- {t.nombre} | Prioridad: {t.prioridad} | Estado: {t.estado}')
+
+#    elif accion == 'salir':
+#        print('\nSaliendo...')
+#        break
+
+#    else:
+#        print('\nOpción invalida.')
+
+
+#----------------------------------------------------------------------
+
+
+#               ---Ejercicio 10: Fruta favorita---
+
+#respuestas = {}
+
+#while True:
+#    nombre = input('\nEscribe tu nombre (o "salir" para terminar): ')
+#    if nombre.lower() == 'salir':
+#        break
+
+#    fruta = input('¿Cuál es tu fruta favorita?: ')
+
+#    if fruta in respuestas:
+#        respuestas[fruta] += 1
+#    else:
+#        respuestas[fruta] = 1
+
+#print('\nResultado:')
+#for fruta in respuestas:
+#    print(f'{fruta}: {respuestas[fruta]} votos')
